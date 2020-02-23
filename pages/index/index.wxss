@@ -1,46 +1,52 @@
 /**index.wxss**/
-swiper, swiper image{
-  width: 100%;
-  height: 200px;
-  margin-top: 5px;
+page, .container, swiper {
+  height: 100%;
 }
 
-.proPrice{
+.slide {
+  height: 35%;
+}
+
+.list-container{ 
+  height: 65%; 
+  overflow: auto; 
+  box-shadow: 0 3px 10px 3px #ccc inset;
+} 
+
+.slide-title {
+  text-align: center;
+  line-height: 80rpx;
+  background: linear-gradient(to bottom, #000, rgba(0, 0, 0, 0));
+  color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+/* .proPrice{
   color: orange;
-}
+} */
 
-.pro{
+/* .pro{
   width: 30%;
-}
+} */
 
-.pro image{
+/* .pro image{
   width: 100%;
   height: 200rpx;
-}
+} */
 
-.content{
+/* .content{
   width: 100%;
   display: flex;
   flex-wrap: wrap; 
   margin-top: 30rpx;
   justify-content: space-around;
 
-}
+} */
 
-.text{
-  margin-left:10px;
-  
-}
-
-.text1{
-  margin-left:10px;
-  
-  
-}
-
-.list-container{  
-  padding: 0  
-}  
+ 
 .list-item{  
   height: 100rpx;  
   display: flex;  
@@ -60,7 +66,7 @@ swiper, swiper image{
 }  
 .title{  
   flex: 1;  
-  splay:flex;
+  display:flex;
   flex-direction: column;  
   width: 310rpx;  
 }  
@@ -73,14 +79,24 @@ swiper, swiper image{
   color:darkgrey;  
 }  
 
+.footer {
+  line-height: 60rpx;
+  padding: 0 20rpx 5rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(to top, #fff 60%, transparent);
+  color: #999;
+}
 
 .arrow {
-  width: 10px;
-  height: 10px;
-  border-top: 2px solid #999;
-  border-right: 2px solid #999;
-  position: absolute;
-  right: 20rpx;
-  transform: rotate(45deg);
-  margin-top: 10rpx;
+  width: 8px;
+  height: 8px;
+  border-top: 3px solid #999;
+  border-right: 3px solid #999;
+  transform: rotate(45deg) translateX(-20rpx);
 }

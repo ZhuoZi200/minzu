@@ -1,35 +1,24 @@
 <!--index.wxml-->
-
 <view class="container">
-  <label class="text">纹样展示</label>
-</view>
-
-
-<swiper indicator-dots autoplay interval="{{interval}}" duration="{{duration}}" circular>
-  <swiper-item wx:for="{{imgUrls}}">
-    <image src="{{item}}" class="slide-image" mode="aspectFill"/>
-  </swiper-item>
-</swiper>
-
-<view class="container">
-<label class="text1">图文组合列表</label>
-</view>
-
-<view class="container1 list-container"> 
-  <view class="list-item" wx:for="{{contactList}}"> 
-    <image class="left" src="/images/minzu.jpg"></image> 
-    <view class="right"> 
-      <view class="title"> 
-      <view class="name">{{item.name}}</view> 
-      <view class="details">{{item.details}}</view> 
-    </view> 
-   </view> 
- </view> 
-</view> 
-
-<view class='list'>
-  <view class='list1'>
-  <view class='arrow'></view>
-    <text>我的发布</text>
+  <view class="slide">
+    <view class="slide-title">纹样展示</view>
+    <swiper indicator-dots autoplay interval="{{interval}}" duration="{{duration}}" circular>
+      <swiper-item wx:for="{{imgUrls}}">
+        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+      </swiper-item>
+    </swiper>
   </view>
+  <view class="list-container"> 
+    <view class="list-item" wx:for="{{contactList}}"> 
+      <image class="left" src="/images/minzu.jpg"></image> 
+      <view class="right"> 
+        <view class="name">{{item.name}}</view> 
+        <view class="details">{{item.details}}</view> 
+      </view> 
+    </view> 
+    <navigator class='footer' url="">
+      <text>我的发布</text>
+      <view class='arrow'></view>
+    </navigator>
+  </view> 
 </view>

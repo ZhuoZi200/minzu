@@ -27,11 +27,6 @@ swiper, swiper image{
 
 }
 
-.share{
-  margin-left:260px;
-  margin-top: 10px;
-}
-
 .text{
   margin-left:10px;
   

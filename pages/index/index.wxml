@@ -1,9 +1,7 @@
 <!--index.wxml-->
 
 <view class="container">
-<label class="text">纹样展示</label>
-<image class="share" src='/images/分享1.png' style="width:30px;height: 30px;" ></image>
-
+  <label class="text">纹样展示</label>
 </view>
 
 

@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/search/search",
     "pages/scan/scan",
-    "pages/category/category",
     "pages/user/user"
   ],
   "window": {

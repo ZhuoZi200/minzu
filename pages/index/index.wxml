@@ -16,9 +16,5 @@
         <view class="details">{{item.details}}</view> 
       </view> 
     </view> 
-    <navigator class='footer' url="">
-      <text>我的发布</text>
-      <view class='arrow'></view>
-    </navigator>
   </view> 
 </view>

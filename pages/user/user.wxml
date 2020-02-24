@@ -1,2 +1,12 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="all-box">
+  <navigator class="login item" url="">
+    <image src="/images/user.png"></image>
+    <view class="name">登录</view>
+    <view class="subtitle">添加副标题</view>
+    <view class="arrow"></view>
+  </navigator>
+  <navigator class="item" url="">图鉴<view class="arrow"></view></navigator>
+  <navigator class="item" url="">设置<view class="arrow"></view></navigator>
+  <navigator class="item" url="">联系我们<view class="arrow"></view></navigator>
+</view>

@@ -12,36 +12,33 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#828282",
+    "selectedColor": "#1492e6",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "/images/首页.png",
-        "selectedIconPath": "/images/首页1.png"
+        "text": "见闻",
+        "iconPath": "/images/xinwen1.png",
+        "selectedIconPath": "/images/xinwen.png"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "text": "识别",
+        "iconPath": "/images/saoyisao1.png",
+        "selectedIconPath": "/images/saoyisao.png"
       },
       {
         "pagePath": "pages/search/search",
         "text": "搜索",
-        "iconPath": "/images/搜索.png",
-        "selectedIconPath": "/images/搜索1.png"
-      },
-      {
-        "pagePath": "pages/scan/scan",
-        "text": "扫一扫",
-        "iconPath": "/images/扫一扫.png",
-        "selectedIconPath": "/images/扫一扫1.png"
-      },
-      {
-        "pagePath": "pages/category/category",
-        "text": "分类",
-        "iconPath": "/images/分类.png",
-        "selectedIconPath": "/images/分类1.png"
+        "iconPath": "/images/sousuo1.png",
+        "selectedIconPath": "/images/sousuo.png"
       },
       {
         "pagePath": "pages/user/user",
         "text": "我的",
-        "iconPath": "/images/我的.png",
-        "selectedIconPath": "/images/我的1.png"
+        "iconPath": "/images/wode1.png",
+        "selectedIconPath": "/images/wode.png"
       }
     ]
   },

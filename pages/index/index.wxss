@@ -24,12 +24,15 @@ page, .container, swiper {
   z-index: 2;
 }
  
-.list-item{  
+.list-item {  
   height: 100rpx;  
   display: flex;  
   flex-direction: row;  
-  margin:40rpx;  
+  margin:0 40rpx; 
+  padding: 40rpx 0; 
+  border-bottom: 1px solid #cdcdcd;
 }  
+
 .left{  
   width: 100rpx;  
   height:100rpx;  
@@ -75,12 +78,4 @@ page, .container, swiper {
   align-items: flex-end;
   background: linear-gradient(to top, #fff 60%, transparent);
   color: #999;
-}
-
-.arrow {
-  width: 8px;
-  height: 8px;
-  border-top: 3px solid #999;
-  border-right: 3px solid #999;
-  transform: rotate(45deg) translateX(-20rpx);
 }

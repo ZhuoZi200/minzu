@@ -1,1 +1,37 @@
 /* pages/user/user.wxss */
+image {
+  width: 120rpx;
+  height: 120rpx;
+  float: left;
+  border: 2px solid #cdcdcd;
+  border-radius: 20rpx;
+  margin-right: 30rpx;
+}
+
+.name {
+  font-size: 60rpx;
+}
+
+.subtitle {
+  font-size: 30rpx;
+  color: #cdcdcd;
+}
+
+.login {
+  /* display: flex; */
+  display: flow-root;
+}
+
+.item {
+  position: relative;
+  margin: 0 20rpx;
+  padding: 20rpx 10rpx;
+  border-bottom: 1px solid #cdcdcd;
+}
+
+.arrow {
+  position: absolute;
+  right: 20rpx;
+  top: 50%;
+  margin-top: -5px;
+}

@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "show-item": "/components/showitem/showitem"
+  },
+  "navigationBarTitleText": "新闻"
 }

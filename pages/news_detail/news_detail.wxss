@@ -1,0 +1,32 @@
+/* pages/news_detail/news_detail.wxss */
+page {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20rpx 40rpx;
+}
+
+.title {
+  text-align: center;
+  font-size: 50rpx;
+}
+
+.info {
+  display: flex;
+}
+
+.info text {
+  flex: 1;
+  color: #ccc;
+  font-size: 28rpx;
+}
+
+.content {
+  padding: 30rpx 20rpx 0;
+  font-size: 35rpx;
+  text-indent: 2em;
+}
+
+image {
+  margin-top: 10rpx;
+  width: 100%;
+}

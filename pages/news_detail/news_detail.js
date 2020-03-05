@@ -1,22 +1,18 @@
-// pages/news/news.js
-const app = getApp();
+// pages/news_detail/news_detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    contactList: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-    // 获取全局请求的数据
-    this.setData({
-      contactList: app.globalData.contactList
-    });
+  onLoad: function (options) {
+
   },
 
   /**

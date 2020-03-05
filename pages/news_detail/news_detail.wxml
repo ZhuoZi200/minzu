@@ -1,0 +1,11 @@
+<!--pages/news_detail/news_detail.wxml-->
+<view class="title">我是标题</view>
+<view class="info">
+  <text>作者：</text>
+  <text>机构：</text>
+  <text>日期：</text>
+</view>
+<view class="content">
+  <view class="text">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
+  <image src="/images/miko.jpg" mode="widthFix"></image>
+</view>

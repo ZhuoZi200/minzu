@@ -2,6 +2,7 @@
   "pages": [ 
     "pages/index/index",
     "pages/news/news",
+    "pages/news_detail/news_detail",
 
     "pages/scan/scan",
     

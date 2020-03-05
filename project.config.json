@@ -23,7 +23,7 @@
 		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.6.6",
+	"libVersion": "2.10.2",
 	"appid": "wxe3cc837dae1feb40",
 	"projectname": "%E7%94%B5%E5%95%86UI",
 	"debugOptions": {
@@ -68,6 +68,12 @@
 					"name": "pages/search/search",
 					"pathName": "pages/search/search",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "新闻详情",
+					"pathName": "pages/news_detail/news_detail",
 					"scene": null
 				}
 			]

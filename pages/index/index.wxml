@@ -3,7 +3,7 @@
   <view class="slide">
     <view class="slide-title">纹样展示</view>
     <swiper indicator-dots autoplay circular interval="2000" duration="1000">
-      <swiper-item wx:for="{{imgUrls}}">
+      <swiper-item wx:for="{{imgUrls}}" wx:key="*this">
         <image src="{{item}}" class="slide-image" mode="aspectFill"/>
       </swiper-item>
     </swiper>

@@ -30,19 +30,10 @@ Page({
   },
 
   onLoad: function() {
-    // 网络测试接口
-    wx.request({
-      url: 'https://3g.163.com/touch/reconstruct/article/list/BBM54PGAwangning/0-20.html',
-      method: 'GET',
-      success: (res) => {
-        let data = res.data + 'hahihuheho';
-        data = data.replace('artiList(', '').replace(')hahihuheho', '');
-        this.setData({
-          contactList: JSON.parse(data).BBM54PGAwangning
-        });
-        console.log(this.contactList);
-      }
-    })
+    // 获取全局请求的数据
+    this.setData({
+      contactList: app.globalData.contactList
+    });
 
     // 本地测试接口
     // wx.request({

@@ -20,6 +20,10 @@ page, .container, swiper {
 
 .list-container .title {
   border-bottom: 1px solid #ccc;
+  margin: 30rpx 0 0 40rpx;
+  padding: 0 0 10rpx 10rpx;
+  font-size: 45rpx;
+  color: var(--themeColor);
 }
 
 .slide-title {
@@ -32,47 +36,10 @@ page, .container, swiper {
   right: 0;
   z-index: 2;
 }
- 
-.list-item {  
-  height: 100rpx;  
-  display: flex;  
-  flex-direction: row;  
-  margin:0 40rpx; 
-  padding: 30rpx 0; 
-  border-bottom: 1px solid #cdcdcd;
-}  
 
-.list-item:last-child {
-  margin-bottom: 30rpx;
+.show-item:last-of-type navigator {
+  margin-bottom: 45rpx;
 }
-
-.left{  
-  width: 100rpx;  
-  height:100rpx;  
-}  
-.right{  
-  width: 590rpx;  
-  height: 100rpx;  
-  margin-left: 20rpx;  
-  /* display: flex;  
-  flex-direction: row;   */
-}  
-
-.name{  
-  font-size: 40rpx;  
-  color: #000;  
-}  
-.details{  
-  font-size: 30rpx;  
-  color:darkgrey; 
-  /* 超出文本省略号显示 */
-  overflow : hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* 限制在一个块元素显示的文本的行数 */
-  -webkit-box-orient: vertical; /* 垂直排列 */
-  word-break: break-all;  /* 内容自动换行 */
-}  
 
 .more {
   line-height: 60rpx;

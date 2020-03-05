@@ -1,6 +1,7 @@
 {
   "pages": [ 
     "pages/index/index",
+    "pages/news/news",
 
     "pages/scan/scan",
     
@@ -12,7 +13,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#f2964f",
-    "navigationBarTitleText": "民族符号分类",
+    "navigationBarTitleText": "民族符号小程序",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

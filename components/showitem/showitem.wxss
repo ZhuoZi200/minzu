@@ -1,0 +1,34 @@
+/* components/showItem/showItem.wxss */
+.list-item {  
+  height: 100rpx;  
+  display: flex;  
+  flex-direction: row;
+  margin:0 40rpx; 
+  padding: 30rpx 0; 
+  border-bottom: 1px solid #cdcdcd;
+}  
+
+.left{  
+  flex: 1;
+}  
+
+.right{ 
+  flex: 5; 
+  margin-left: 20rpx;
+}  
+
+.name{  
+  font-size: 40rpx;  
+  color: #000;  
+}  
+.details{
+  font-size: 30rpx;  
+  color:darkgrey; 
+  /* 超出文本省略号显示 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}  

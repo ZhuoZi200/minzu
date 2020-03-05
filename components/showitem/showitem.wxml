@@ -1,0 +1,14 @@
+<!--components/showItem/showItem.wxml-->
+<navigator class="list-item" url="{{itemUrl}}"> 
+  <image class="left" src="{{itemSrc}}" mode="widthFix"></image> 
+  <view class="right"> 
+    <!-- <view class="name">{{item.name}}</view>  -->
+    <view class="name">
+      <slot name="item-name"></slot>
+    </view> 
+    <!-- <view class="details">{{item.details}}</view>  -->
+    <view class="details">
+      <slot name="item-detail"></slot>
+    </view> 
+  </view> 
+</navigator>

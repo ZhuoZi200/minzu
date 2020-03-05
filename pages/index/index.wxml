@@ -2,7 +2,7 @@
 <view class="container">
   <view class="slide">
     <view class="slide-title">纹样展示</view>
-    <swiper indicator-dots autoplay interval="{{interval}}" duration="{{duration}}" circular>
+    <swiper indicator-dots autoplay circular interval="2000" duration="1000">
       <swiper-item wx:for="{{imgUrls}}">
         <image src="{{item}}" class="slide-image" mode="aspectFill"/>
       </swiper-item>
@@ -10,16 +10,13 @@
   </view>
   <view class="list-container">
     <view class="title">新闻</view> 
-    <view class="list-item" wx:for="{{contactList}}"> 
-      <image class="left" src="/images/minzu.jpg"></image> 
-      <view class="right"> 
-        <view class="name">{{item.name}}</view> 
-        <view class="details">{{item.details}}</view> 
-      </view> 
-    </view>
+    <show-item wx:for="{{contactList}}" wx:key="id" item-src="{{item.imgUrl}}" item-url="item.newsUrl" class="show-item">
+      <text slot="item-name">{{item.name}}</text>
+      <text slot="item-detail">{{item.details}}</text>
+    </show-item>
   </view> 
   <view class="more">
-    <navigator url="">查看更多</navigator>
+    <navigator url="/pages/news/news">查看更多</navigator>
     <view class="arrow"></view>
   </view>
 </view>

@@ -1,20 +1,24 @@
 {
-  "pages": [
+  "pages": [ 
     "pages/index/index",
-    "pages/search/search",
+
     "pages/scan/scan",
+    
+    "pages/picbook/picbook",
+    "pages/search/search",
+    
     "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1492e6",
+    "navigationBarBackgroundColor": "#f2964f",
     "navigationBarTitleText": "民族符号分类",
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "backgroundColor": "#fff",
     "color": "#828282",
-    "selectedColor": "#1492e6",
+    "selectedColor": "#f2964f",
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -29,10 +33,10 @@
         "selectedIconPath": "/images/saoyisao.png"
       },
       {
-        "pagePath": "pages/search/search",
-        "text": "搜索",
-        "iconPath": "/images/sousuo1.png",
-        "selectedIconPath": "/images/sousuo.png"
+        "pagePath": "pages/picbook/picbook",
+        "text": "图鉴",
+        "iconPath": "/images/category1.png",
+        "selectedIconPath": "/images/category.png"
       },
       {
         "pagePath": "pages/user/user",

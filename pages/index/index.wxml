@@ -8,13 +8,18 @@
       </swiper-item>
     </swiper>
   </view>
-  <view class="list-container"> 
+  <view class="list-container">
+    <view class="title">新闻</view> 
     <view class="list-item" wx:for="{{contactList}}"> 
       <image class="left" src="/images/minzu.jpg"></image> 
       <view class="right"> 
         <view class="name">{{item.name}}</view> 
         <view class="details">{{item.details}}</view> 
       </view> 
-    </view> 
+    </view>
   </view> 
+  <view class="more">
+    <navigator url="">查看更多</navigator>
+    <view class="arrow"></view>
+  </view>
 </view>

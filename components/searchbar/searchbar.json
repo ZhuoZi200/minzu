@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mp-searchbar": "../components/searchbar/searchbar"
+  },
+  "navigationBarTitleText": "UI组件库"
+}

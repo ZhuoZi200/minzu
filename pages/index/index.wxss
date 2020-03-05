@@ -1,4 +1,9 @@
 /**index.wxss**/
+page {
+  --themeColor: #f2964f;
+  /* font-size: 28rpx; */
+}
+
 page, .container, swiper {
   height: 100%;
 }
@@ -7,11 +12,15 @@ page, .container, swiper {
   height: 35%;
 }
 
-.list-container{ 
+.list-container { 
   height: 65%; 
   overflow: auto; 
-  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5) inset;
+  /* box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5) inset; */
 } 
+
+.list-container .title {
+  border-bottom: 1px solid #ccc;
+}
 
 .slide-title {
   text-align: center;
@@ -29,9 +38,13 @@ page, .container, swiper {
   display: flex;  
   flex-direction: row;  
   margin:0 40rpx; 
-  padding: 40rpx 0; 
+  padding: 30rpx 0; 
   border-bottom: 1px solid #cdcdcd;
 }  
+
+.list-item:last-child {
+  margin-bottom: 30rpx;
+}
 
 .left{  
   width: 100rpx;  
@@ -44,12 +57,7 @@ page, .container, swiper {
   /* display: flex;  
   flex-direction: row;   */
 }  
-.title{  
-  flex: 1;  
-  display:flex;
-  flex-direction: column;  
-  width: 310rpx;  
-}  
+
 .name{  
   font-size: 40rpx;  
   color: #000;  
@@ -66,7 +74,7 @@ page, .container, swiper {
   word-break: break-all;  /* 内容自动换行 */
 }  
 
-.footer {
+.more {
   line-height: 60rpx;
   padding: 0 20rpx 5rpx;
   position: absolute;
@@ -77,5 +85,10 @@ page, .container, swiper {
   justify-content: space-between;
   align-items: flex-end;
   background: linear-gradient(to top, #fff 60%, transparent);
-  color: #999;
+  color: var(--themeColor);
+}
+
+.more .arrow {
+  border-color: var(--themeColor);
+  margin: 0 5rpx 15rpx 15rpx;
 }

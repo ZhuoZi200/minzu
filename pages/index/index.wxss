@@ -37,7 +37,7 @@ page, .container, swiper {
   z-index: 2;
 }
 
-.show-item:last-of-type navigator {
+show-item:last-of-type navigator {
   margin-bottom: 45rpx;
 }
 

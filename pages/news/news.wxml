@@ -1,2 +1,5 @@
 <!--pages/news/news.wxml-->
-<text>pages/news/news.wxml</text>
+<show-item wx:for="{{contactList}}" wx:key="docid" item-src="{{item.imgsrc}}" item-url="item.url">
+  <text slot="item-name">{{item.source}}</text>
+  <text slot="item-detail">{{item.title}}</text>
+</show-item>

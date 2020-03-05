@@ -10,9 +10,16 @@
   </view>
   <view class="list-container">
     <view class="title">新闻</view> 
-    <show-item wx:for="{{contactList}}" wx:key="id" item-src="{{item.imgUrl}}" item-url="item.newsUrl" class="show-item">
+    <!-- 本地接口测试 -->
+    <!-- <show-item wx:for="{{contactList}}" wx:key="id" item-src="{{item.imgUrl}}" item-url="item.newsUrl" class="show-item">
       <text slot="item-name">{{item.name}}</text>
       <text slot="item-detail">{{item.details}}</text>
+    </show-item> -->
+
+    <!-- 网络接口测试 -->
+    <show-item wx:for="{{contactList}}" wx:key="docid" item-src="{{item.imgsrc}}" item-url="item.url">
+      <text slot="item-name">{{item.source}}</text>
+      <text slot="item-detail">{{item.title}}</text>
     </show-item>
   </view> 
   <view class="more">

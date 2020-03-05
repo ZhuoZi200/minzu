@@ -30,26 +30,29 @@ Page({
   },
 
   onLoad: function() {
-    // wx.request({
-    //   url: 'https://3g.163.com/touch/reconstruct/article/list/BBM54PGAwangning/0-20.html',
-    //   method: 'GET',
-    //   success: (res) => {
-    //     let data = res.data + 'hahihuheho';
-    //     data = data.replace('artiList(', '').replace(')hahihuheho', '');
-    //     this.setData({
-    //       contactList: JSON.parse(data).BBM54PGAwangning
-    //     });
-    //     console.log(this.contactList);
-    //   }
-    // })
+    // 网络测试接口
     wx.request({
-      url: 'http://127.0.0.1:80/test_data.json',
+      url: 'https://3g.163.com/touch/reconstruct/article/list/BBM54PGAwangning/0-20.html',
       method: 'GET',
       success: (res) => {
+        let data = res.data + 'hahihuheho';
+        data = data.replace('artiList(', '').replace(')hahihuheho', '');
         this.setData({
-          contactList: res.data.message
+          contactList: JSON.parse(data).BBM54PGAwangning
         });
+        console.log(this.contactList);
       }
     })
+
+    // 本地测试接口
+    // wx.request({
+    //   url: 'http://127.0.0.1:80/test_data.json',
+    //   method: 'GET',
+    //   success: (res) => {
+    //     this.setData({
+    //       contactList: res.data.message
+    //     });
+    //   }
+    // })
   }
 })

@@ -1,6 +1,6 @@
 <!--components/showItem/showItem.wxml-->
 <navigator class="list-item" url="{{itemUrl}}"> 
-  <image class="left" src="{{itemSrc}}" mode="widthFix"></image> 
+  <image class="left" src="{{itemSrc}}" mode="aspectFill"></image> 
   <view class="right"> 
     <!-- <view class="name">{{item.name}}</view>  -->
     <view class="name">

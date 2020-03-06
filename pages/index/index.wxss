@@ -1,9 +1,4 @@
 /**index.wxss**/
-page {
-  --themeColor: #f2964f;
-  /* font-size: 28rpx; */
-}
-
 page, .container, swiper {
   height: 100%;
 }

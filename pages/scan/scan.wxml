@@ -1,2 +1,9 @@
 <!--pages/scan/scan.wxml-->
-<text>pages/scan/scan.wxml</text>
+<navigator class="option" url="/pages/camera/camera">
+  拍摄
+  <view class="arrow"></view>
+</navigator>
+<navigator class="option">
+  从相册选择
+  <view class="arrow"></view>
+</navigator>

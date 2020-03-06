@@ -5,6 +5,7 @@
     "pages/news_detail/news_detail",
 
     "pages/scan/scan",
+    "pages/camera/camera",
     
     "pages/picbook/picbook",
     "pages/search/search",

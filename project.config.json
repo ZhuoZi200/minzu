@@ -65,15 +65,23 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/search/search",
-					"pathName": "pages/search/search",
+					"name": "新闻详情",
+					"pathName": "pages/news_detail/news_detail",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "新闻详情",
-					"pathName": "pages/news_detail/news_detail",
+					"name": "新闻板块",
+					"pathName": "pages/news/news",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "识别模块",
+					"pathName": "pages/scan/scan",
+					"query": "",
 					"scene": null
 				}
 			]

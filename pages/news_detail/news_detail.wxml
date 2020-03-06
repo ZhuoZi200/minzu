@@ -1,11 +1,11 @@
 <!--pages/news_detail/news_detail.wxml-->
-<view class="title">我是标题</view>
+<view class="title">{{newsDigest.title}}</view>
 <view class="info">
-  <text>作者：</text>
-  <text>机构：</text>
-  <text>日期：</text>
+  <text wx:if="{{newsDigest.author}}">作者：{{newsDigest.author}}</text>
+  <text>来源：{{newsDigest.source}}</text>
+  <text>日期：{{newsDigest.ptime}}</text>
 </view>
 <view class="content">
-  <view class="text">内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容</view>
-  <image src="/images/miko.jpg" mode="widthFix"></image>
+  <view class="text">{{newsDigest.digest}}</view>
+  <image src="{{newsDigest.imgsrc}}" mode="widthFix"></image>
 </view>

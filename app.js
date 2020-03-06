@@ -5,7 +5,24 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    
+    // 缓存判断
+    const cacheData = wx.getStorageSync('newsData');
+    if(!cacheData) {
+      console.log("缓存数据为空，需要重新发送请求");
+      this.getNetData();
+    } else {
+      // 已存在缓存数据，无需重复发送请求，但需判断缓存是否过期
+      if (Date.now() - wx.getStorageSync('newsData').time > 1000*15) {
+        console.log("缓存已过期，需重新请求");
+        this.getNetData();
+      } else {
+        console.log("缓存未过期，可直接使用缓存");
+        this.globalData.contactList = wx.getStorageSync('newsData').data;
+      }
+    }
+    console.log(wx.getStorageSync('newsData'));
+    
     // 登录
     wx.login({
       success: res => {
@@ -31,8 +48,10 @@ App({
           })
         }
       }
-    })
-    // 网络测试接口
+    })  
+  },
+  // 网络接口测试
+  getNetData() {
     wx.request({
       url: 'https://3g.163.com/touch/reconstruct/article/list/BBM54PGAwangning/0-20.html',
       method: 'GET',
@@ -41,6 +60,7 @@ App({
         data = data.replace('artiList(', '').replace(')hahihuheho', '');
         // 将请求到的数据赋值给全局变量
         this.globalData.contactList = JSON.parse(data).BBM54PGAwangning;
+        wx.setStorageSync('newsData', { time: Date.now(), data: this.globalData.contactList });
       }
     })
   },

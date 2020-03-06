@@ -1,25 +1,18 @@
-// pages/news_detail/news_detail.js
-const app = getApp();
+// pages/camera/camera.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newsDigest: null
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 遍历所有新闻，找出所点击的新闻
-    app.globalData.contactList.forEach((item) => {
-      if (item.docid === options.id)
-      this.setData({
-        newsDigest: item
-      })
-    });
+
   },
 
   /**

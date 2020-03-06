@@ -17,7 +17,7 @@
     </show-item> -->
 
     <!-- 网络接口测试 -->
-    <show-item wx:for="{{contactList}}" wx:key="docid" item-src="{{item.imgsrc}}" item-url="item.url">
+    <show-item wx:for="{{contactList}}" wx:key="docid" item-src="{{item.imgsrc}}" item-url="/pages/news_detail/news_detail?id={{item.docid}}">
       <text slot="item-name">{{item.source}}</text>
       <text slot="item-detail">{{item.title}}</text>
     </show-item>

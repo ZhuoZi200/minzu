@@ -1,1 +1,11 @@
 /* pages/scan/scan.wxss */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 1px solid #ccc;
+}
+.arrow {
+  border-color: var(--themeColor);
+}

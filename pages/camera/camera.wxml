@@ -2,6 +2,6 @@
 <camera resolution="high" frame-size="large">
   <cover-view class="cover-view">
     <cover-image src="/images/bg_camera1.png"></cover-image>
-    <cover-view class="button" hover-class="on"></cover-view>
+    <cover-view class="button" hover-class="on" bindtap="takePhotos"></cover-view>
   </cover-view>
 </camera>

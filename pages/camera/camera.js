@@ -1,66 +1,42 @@
 // pages/camera/camera.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tempImgPath: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  takePhotos: function() {
+    wx.createCameraContext().takePhoto({
+      quality: 'high',
+      success: (res) => {
+        let pages = getCurrentPages();
+        let prevPage = pages[pages.length - 2];  // 获取上一个页面实例
+        prevPage.setData({
+          tempImgPath: res.tempImagePath  // 将照片的临时路径存放在上一个页面的data中
+        });
+        this.setData({
+          tempImgPath: res.tempImagePath  // 将照片的临时路径存放在上一个页面的data中
+        });
+        // console.log(res.tempImagePath)
+        // console.log("转base64之后")
+        // console.log(wx.arrayBufferToBase64(res.tempImagePathr))
+        wx.navigateBack({
+          delta: 1
+        });
+        // 将图像临时路径作为方法参数，识别图像
+        app.scanImg(this.data.tempImgPath);
+      }
+    });
   }
 })

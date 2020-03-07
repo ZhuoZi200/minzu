@@ -13,7 +13,7 @@ App({
       this.getNetData();
     } else {
       // 已存在缓存数据，无需重复发送请求，但需判断缓存是否过期
-      if (Date.now() - wx.getStorageSync('newsData').time > 1000*15) {
+      if (Date.now() - wx.getStorageSync('newsData').time > 1000*120) {  // 过期时间定为2分钟
         console.log("缓存已过期，需重新请求");
         this.getNetData();
       } else {
@@ -23,6 +23,9 @@ App({
     }
     console.log(wx.getStorageSync('newsData'));
     
+    // 向百度请求access_token
+    this.getAccessToken();
+
     // 登录
     wx.login({
       success: res => {
@@ -61,6 +64,46 @@ App({
         // 将请求到的数据赋值给全局变量
         this.globalData.contactList = JSON.parse(data).BBM54PGAwangning;
         wx.setStorageSync('newsData', { time: Date.now(), data: this.globalData.contactList });
+      }
+    })
+  },
+  // 向百度请求access_token
+  getAccessToken() {
+    wx.request({
+      url: 'https://aip.baidubce.com/oauth/2.0/token',
+      method: 'GET',
+      data: {
+        grant_type: 'client_credentials',
+        client_id: 'W1IoyVQKo0HLQERGd3SSzIMO',
+        client_secret: '6qSjflFUfMXW7ylvngPzl9fEVvNVH748'
+      },
+      success: (res) => {
+        wx.setStorageSync('accessToken', res.data.access_token)
+      }
+    })
+  },
+  // logo识别
+  scanImg(path) {
+    wx.getFileSystemManager().readFile({
+      filePath: path,
+      encoding: 'base64',
+      success: (res) => {
+        console.log("请求到的access_token是：" + wx.getStorageSync('accessToken'));
+        wx.request({
+          url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
+          data: {
+            access_token: wx.getStorageSync('accessToken'),
+            image: res.data,
+            baike_num: 1
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          method: 'POST',
+          success: (res) => {
+            console.log(res.data)
+          }
+        })
       }
     })
   },

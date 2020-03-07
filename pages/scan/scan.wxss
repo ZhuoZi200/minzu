@@ -1,5 +1,5 @@
 /* pages/scan/scan.wxss */
-.option {
+/* .option {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -8,4 +8,4 @@
 }
 .arrow {
   border-color: var(--themeColor);
-}
+} */

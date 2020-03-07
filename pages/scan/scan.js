@@ -5,14 +5,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tempImgPath: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    
   },
 
   /**
@@ -26,7 +26,33 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    wx.showActionSheet({
+      itemList: ['从手机相册选择', '拍照'],
+      success: (res) => {
+        console.log(res.tapIndex)
+        if (res.tapIndex === 1) {
+          wx.navigateTo({
+            url: '/pages/camera/camera'
+          })
+        } else if (res.tapIndex === 0) {
+          wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album', 'camera'],
+            success: (res) => {
+              // tempFilePath可以作为src的属性值显示图片
+              this.setData({
+                tempImgPath: res.tempFilePaths
+              })
+              console.log(this.data.tempImgPath)
+            }
+          })
+        }
+      },
+      fail: function (res) {
+        console.log(res.errMsg)
+      }
+    })
   },
 
   /**

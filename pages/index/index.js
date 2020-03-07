@@ -19,7 +19,7 @@ Page({
         this.setData({
           contactList: app.globalData.contactList
         });
-      }, 100);
+      }, 200);
 
     // 本地测试接口
     // wx.request({

@@ -1,9 +1,10 @@
 <!--pages/scan/scan.wxml-->
-<navigator class="option" url="/pages/camera/camera">
+<!-- <navigator class="option" url="/pages/camera/camera">
   拍摄
   <view class="arrow"></view>
 </navigator>
 <navigator class="option">
   从相册选择
   <view class="arrow"></view>
-</navigator>
+</navigator> -->
+<image mode="widthFix" src="{{tempImgPath}}" style="width: 100%"></image>

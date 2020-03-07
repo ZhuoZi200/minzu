@@ -20,22 +20,38 @@ Page({
     wx.createCameraContext().takePhoto({
       quality: 'high',
       success: (res) => {
-        let pages = getCurrentPages();
-        let prevPage = pages[pages.length - 2];  // 获取上一个页面实例
-        prevPage.setData({
-          tempImgPath: res.tempImagePath  // 将照片的临时路径存放在上一个页面的data中
-        });
         this.setData({
-          tempImgPath: res.tempImagePath  // 将照片的临时路径存放在上一个页面的data中
+          tempImgPath: res.tempImagePath
         });
-        // console.log(res.tempImagePath)
-        // console.log("转base64之后")
-        // console.log(wx.arrayBufferToBase64(res.tempImagePathr))
-        wx.navigateBack({
-          delta: 1
-        });
-        // 将图像临时路径作为方法参数，识别图像
-        app.scanImg(this.data.tempImgPath);
+
+        wx.getFileSystemManager().readFile({
+          filePath: this.data.tempImgPath,
+          encoding: 'base64',
+          success: (res) => {
+            console.log("请求到的access_token是：" + wx.getStorageSync('accessToken'));
+            wx.request({
+              url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
+              data: {
+                access_token: wx.getStorageSync('accessToken'),
+                image: res.data,
+                baike_num: 1
+              },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              method: 'POST',
+              success: (res) => {
+                console.log("扫描结果是")
+                console.log(res.data)
+                var result = res.data.result[0].name;
+                // 跳转至识别结果页需要传递两个参数：1.图片临时路径  2.识别结果数据
+                wx.navigateTo({
+                  url: `/pages/scan_res/scan_res?path=${this.data.tempImgPath}&result=${result}`
+                })
+              }
+            })
+          }
+        })
       }
     });
   }

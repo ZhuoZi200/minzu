@@ -82,31 +82,6 @@ App({
       }
     })
   },
-  // logo识别
-  scanImg(path) {
-    wx.getFileSystemManager().readFile({
-      filePath: path,
-      encoding: 'base64',
-      success: (res) => {
-        console.log("请求到的access_token是：" + wx.getStorageSync('accessToken'));
-        wx.request({
-          url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
-          data: {
-            access_token: wx.getStorageSync('accessToken'),
-            image: res.data,
-            baike_num: 1
-          },
-          header: {
-            'content-type': 'application/x-www-form-urlencoded'
-          },
-          method: 'POST',
-          success: (res) => {
-            console.log(res.data)
-          }
-        })
-      }
-    })
-  },
   globalData: {
     userInfo: null,
     contactList: null

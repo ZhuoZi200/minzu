@@ -83,6 +83,12 @@
 					"pathName": "pages/scan/scan",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "扫描结果页",
+					"pathName": "pages/scan_res/scan_res",
+					"scene": null
 				}
 			]
 		}

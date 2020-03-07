@@ -6,6 +6,7 @@
 
     "pages/scan/scan",
     "pages/camera/camera",
+    "pages/scan_res/scan_res",
     
     "pages/picbook/picbook",
     "pages/search/search",

@@ -7,4 +7,4 @@
   从相册选择
   <view class="arrow"></view>
 </navigator> -->
-<image mode="widthFix" src="{{tempImgPath}}" style="width: 100%"></image>
+<!-- <image mode="widthFix" src="{{tempImgPath}}" style="width: 100%"></image> -->

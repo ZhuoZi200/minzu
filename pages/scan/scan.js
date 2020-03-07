@@ -1,4 +1,5 @@
 // pages/scan/scan.js
+const app = getApp();
 Page({
 
   /**
@@ -42,9 +43,37 @@ Page({
             success: (res) => {
               // tempFilePath可以作为src的属性值显示图片
               this.setData({
-                tempImgPath: res.tempFilePaths
+                tempImgPath: res.tempFilePaths[0]
+              });
+
+              wx.getFileSystemManager().readFile({
+                filePath: this.data.tempImgPath,
+                encoding: 'base64',
+                success: (res) => {
+                  console.log("请求到的access_token是：" + wx.getStorageSync('accessToken'));
+                  wx.request({
+                    url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
+                    data: {
+                      access_token: wx.getStorageSync('accessToken'),
+                      image: res.data,
+                      baike_num: 1
+                    },
+                    header: {
+                      'content-type': 'application/x-www-form-urlencoded'
+                    },
+                    method: 'POST',
+                    success: (res) => {
+                      console.log("扫描结果是")
+                      console.log(res.data)
+                      var result = res.data.result[0].name;
+                      // 跳转至识别结果页需要传递两个参数：1.图片临时路径  2.识别结果数据
+                      wx.navigateTo({
+                        url: `/pages/scan_res/scan_res?path=${this.data.tempImgPath}&result=${result}`
+                      })
+                    }
+                  })
+                }
               })
-              console.log(this.data.tempImgPath)
             }
           })
         }

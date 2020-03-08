@@ -21,6 +21,11 @@
 .name{  
   font-size: 40rpx;  
   color: #000;  
+  /* 超出文本省略号显示 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
 }  
 .details{
   font-size: 30rpx;  

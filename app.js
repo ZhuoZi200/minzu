@@ -6,14 +6,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
     
-    // 缓存判断
+    // 新闻缓存判断
     const cacheData = wx.getStorageSync('newsData');
     if(!cacheData) {
       console.log("缓存数据为空，需要重新发送请求");
       this.getNetData();
     } else {
       // 已存在缓存数据，无需重复发送请求，但需判断缓存是否过期
-      if (Date.now() - wx.getStorageSync('newsData').time > 1000*120) {  // 过期时间定为2分钟
+      if (Date.now() - cacheData.time > 1000*120) {  // 过期时间定为2分钟
         console.log("缓存已过期，需重新请求");
         this.getNetData();
       } else {
@@ -23,9 +23,16 @@ App({
     }
     console.log(wx.getStorageSync('newsData'));
     
-    // 向百度请求access_token
-    this.getAccessToken();
-
+    // 百度access_token缓存判断
+    const accessToken = wx.getStorageSync('accessToken');
+    if (!accessToken) {
+      console.log("accessToken不存在缓存，需要获取");
+      this.getAccessToken();
+    } else if (Date.now() - accessToken.time > 1000*accessToken.data.expires_in) {
+      console.log("accessToken已过期，过期累计时间" + (Date.now() - accessToken.time) + "，需要重新获取");
+      this.getAccessToken();
+    }
+    
     // 登录
     wx.login({
       success: res => {
@@ -67,7 +74,7 @@ App({
       }
     })
   },
-  // 向百度请求access_token
+  // 向百度请求access_token，并将请求结果做缓存
   getAccessToken() {
     wx.request({
       url: 'https://aip.baidubce.com/oauth/2.0/token',
@@ -78,7 +85,7 @@ App({
         client_secret: '6qSjflFUfMXW7ylvngPzl9fEVvNVH748'
       },
       success: (res) => {
-        wx.setStorageSync('accessToken', res.data.access_token)
+        wx.setStorageSync('accessToken', { time: Date.now(), data: res.data });
       }
     })
   },

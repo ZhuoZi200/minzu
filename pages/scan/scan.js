@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    tempImgPath: ''
+    tempImgPath: '',
+    result: ''
   },
 
   /**
@@ -54,7 +55,7 @@ Page({
                   wx.request({
                     url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
                     data: {
-                      access_token: wx.getStorageSync('accessToken'),
+                      access_token: wx.getStorageSync('accessToken').data.access_token,
                       image: res.data,
                       baike_num: 1
                     },
@@ -65,10 +66,20 @@ Page({
                     success: (res) => {
                       console.log("扫描结果是")
                       console.log(res.data)
-                      var result = res.data.result[0].name;
+                      // 识别结果健壮性
+                      if (res.data.result.length === 0 || res.data.result[0].probability <= 0.5) {
+                        this.setData({
+                          tempImgPath: '/images/scan_fail.jpg',
+                          result: 'logo识别失败~'
+                        })
+                      } else {
+                        this.setData({
+                          result: res.data.result[0].name
+                        })
+                      }
                       // 跳转至识别结果页需要传递两个参数：1.图片临时路径  2.识别结果数据
                       wx.navigateTo({
-                        url: `/pages/scan_res/scan_res?path=${this.data.tempImgPath}&result=${result}`
+                        url: `/pages/scan_res/scan_res?path=${this.data.tempImgPath}&result=${this.data.result}`
                       })
                     }
                   })

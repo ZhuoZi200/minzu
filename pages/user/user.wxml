@@ -1,12 +1,21 @@
 <!--pages/user/user.wxml-->
 <view class="all-box">
-  <navigator class="login item" url="">
+
+  <view class="user-box" wx:if="{{userInfo.avatarUrl}}">
+    <image class="user-bg" src="{{userInfo.avatarUrl}}" mode="aspectFill"></image>
+    <view class="user-info">
+      <image class="user-icon" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+
+  <navigator class="login" url="/pages/login/login" wx:else>
     <image src="/images/user.png"></image>
-    <view class="name">登录</view>
-    <view class="subtitle">添加副标题</view>
+    <view class="name">未授权</view>
+    <view class="subtitle">点击前往授权</view>
     <view class="arrow"></view>
   </navigator>
-  <navigator class="item" url="">图鉴<view class="arrow"></view></navigator>
-  <navigator class="item" url="">设置<view class="arrow"></view></navigator>
-  <navigator class="item" url="">联系我们<view class="arrow"></view></navigator>
+
+  <setting-item path="/pages/setting/setting">设置</setting-item>
+  <setting-item path="123">意见与建议</setting-item>
 </view>

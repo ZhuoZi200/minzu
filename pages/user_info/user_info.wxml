@@ -1,0 +1,16 @@
+<!--pages/user_info/user_info.wxml-->
+<!-- <setting-item path="/pages/setting/setting">更改昵称</setting-item> -->
+<form>
+  <view class="nick-name item">
+    <input auto-focus placeholder="输入新昵称" maxlength="10" bindinput="listenInput" wx:if="{{isInput}}"></input>
+    <text wx:else>{{inputValue}}</text>
+    <button size="mini" hover-class="on" bindtap="changeName">{{btnName}}</button>
+  </view>
+  <view class="sex item">
+    <text>性别</text>
+    <radio-group name="sex">
+      <label><radio value="0" checked="checked"/>男</label>
+      <label><radio value="1"/>女</label>
+    </radio-group>
+  </view>
+</form>

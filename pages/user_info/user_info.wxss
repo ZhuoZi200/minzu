@@ -1,0 +1,36 @@
+/* pages/user_info/user_info.wxss */
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 20rpx;
+  margin: 0 20rpx;
+}
+
+.nick-name button {
+  margin: 0;
+  background-color: var(--themeColor);
+  color: var(--btnTextColor);
+}
+
+.nick-name .on {
+  background-color: red;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  width: 30rpx; 
+  height: 30rpx; 
+  font-size: 0;
+  background-color: var(--themeColor);
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+  border-color:#ccc;
+  background:#fff;
+}
+
+radio-group radio {
+  margin-left: 30rpx;
+}

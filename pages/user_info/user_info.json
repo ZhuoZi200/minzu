@@ -1,6 +1,5 @@
 {
   "usingComponents": {
     "setting-item": "/components/settingitem/settingitem"
-  },
-  "navigationBarTitleText": "我的"
+  }
 }

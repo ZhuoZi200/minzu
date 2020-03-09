@@ -11,7 +11,10 @@
     "pages/picbook/picbook",
     "pages/search/search",
     
-    "pages/user/user"
+    "pages/user/user",
+    "pages/setting/setting",
+    "pages/user_info/user_info",
+    "pages/login/login"
   ],
   "window": {
     "backgroundTextStyle": "light",

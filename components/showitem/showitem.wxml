@@ -2,11 +2,11 @@
 <navigator class="list-item" url="{{itemUrl}}"> 
   <image class="left" src="{{itemSrc}}" mode="aspectFill"></image> 
   <view class="right"> 
-    <!-- <view class="name">{{item.name}}</view>  -->
+    <!-- 标题 -->
     <view class="name">
       <slot name="item-name"></slot>
     </view> 
-    <!-- <view class="details">{{item.details}}</view>  -->
+    <!-- 内容 -->
     <view class="details">
       <slot name="item-detail"></slot>
     </view> 

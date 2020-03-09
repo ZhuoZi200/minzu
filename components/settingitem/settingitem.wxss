@@ -1,0 +1,19 @@
+/* components/settingitem/settingitem.wxss */
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  margin: 0 20rpx;
+  border-bottom: 1px solid #ccc;
+}
+
+.option::after {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-top: 3px solid var(--themeColor);
+  border-right: 3px solid var(--themeColor);
+  transform: rotate(45deg);
+}

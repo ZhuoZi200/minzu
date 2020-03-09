@@ -1,0 +1,4 @@
+<!--components/settingitem/settingitem.wxml-->
+<navigator class="option" url="{{path}}">
+  <slot></slot>
+</navigator>

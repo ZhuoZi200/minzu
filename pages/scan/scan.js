@@ -51,7 +51,8 @@ Page({
                 filePath: this.data.tempImgPath,
                 encoding: 'base64',
                 success: (res) => {
-                  console.log("请求到的access_token是：" + wx.getStorageSync('accessToken'));
+                  console.log("图片转码结果是：");
+                  console.log(res);
                   wx.request({
                     url: 'https://aip.baidubce.com/rest/2.0/image-classify/v2/logo',
                     data: {

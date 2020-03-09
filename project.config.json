@@ -88,6 +88,27 @@
 					"id": -1,
 					"name": "扫描结果页",
 					"pathName": "pages/scan_res/scan_res",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/user_info/user_info",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "授权页",
+					"pathName": "pages/login/login",
 					"scene": null
 				}
 			]

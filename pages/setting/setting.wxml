@@ -1,5 +1,5 @@
 <!--pages/setting/setting.wxml-->
-<setting-item path="/pages/user_info/user_info">个人信息</setting-item>
+<setting-item path="/pages/user_info/user_info" wx:if="{{userInfo}}">个人信息</setting-item>
 <setting-item path="/pages/setting/setting">分享</setting-item>
 <setting-item path="/pages/setting/setting">清除缓存</setting-item>
-<setting-item path="/pages/setting/setting">退出登录</setting-item>
+<setting-item path="#" bindtap="logout" wx:if="{{userInfo}}">退出登录</setting-item>

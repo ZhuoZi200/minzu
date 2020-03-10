@@ -3,14 +3,13 @@
 <form>
   <view class="nick-name item">
     <input auto-focus placeholder="输入新昵称" maxlength="10" bindinput="listenInput" wx:if="{{isInput}}"></input>
-    <text wx:else>{{inputValue}}</text>
+    <text wx:else>{{nickName}}</text>
     <button size="mini" hover-class="on" bindtap="changeName">{{btnName}}</button>
   </view>
   <view class="sex item">
     <text>性别</text>
-    <radio-group name="sex">
-      <label><radio value="0" checked="checked"/>男</label>
-      <label><radio value="1"/>女</label>
+    <radio-group name="sex" bindchange="radioChange">
+      <label wx:for="{{genders}}" wx:key="index"><radio value="{{item.value}}" checked="{{item.checked}}"/>{{item.label}}</label>
     </radio-group>
   </view>
 </form>

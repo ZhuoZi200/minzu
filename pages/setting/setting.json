@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "setting-item": "/components/settingitem/settingitem"
-  }
+  },
+  "navigationBarTitleText": "设置"
 }

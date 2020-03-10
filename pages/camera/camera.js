@@ -7,14 +7,18 @@ Page({
    */
   data: {
     tempImgPath: '',
-    result: ''
+    result: '',
+    isFinished: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
     
+  },
+
+  onHide: function () {
+    this.setData({
+      isFinished: false
+    });
   },
 
   takePhotos: function() {
@@ -64,6 +68,9 @@ Page({
           }
         })
       }
+    });
+    this.setData({
+      isFinished: true
     });
   }
 })

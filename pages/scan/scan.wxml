@@ -8,3 +8,7 @@
   <view class="arrow"></view>
 </navigator> -->
 <!-- <image mode="widthFix" src="{{tempImgPath}}" style="width: 100%"></image> -->
+<view class="finished" wx:if="{{isShow}}">
+  <image src="{{tempImgPath}}" mode="widthFix" style="width: 100%"></image>
+  <toast>识别中...</toast>
+</view>

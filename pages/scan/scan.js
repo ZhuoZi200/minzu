@@ -7,7 +7,8 @@ Page({
    */
   data: {
     tempImgPath: '',
-    result: ''
+    result: '',
+    isShow: false
   },
 
   /**
@@ -32,11 +33,14 @@ Page({
       itemList: ['从手机相册选择', '拍照'],
       success: (res) => {
         console.log(res.tapIndex)
+        // 用户选择了拍照识别
         if (res.tapIndex === 1) {
           wx.navigateTo({
             url: '/pages/camera/camera'
           })
-        } else if (res.tapIndex === 0) {
+        } 
+        // 用户选择了相册识别
+        else if (res.tapIndex === 0) {
           wx.chooseImage({
             count: 1,
             sizeType: ['original', 'compressed'],
@@ -44,9 +48,11 @@ Page({
             success: (res) => {
               // tempFilePath可以作为src的属性值显示图片
               this.setData({
-                tempImgPath: res.tempFilePaths[0]
+                tempImgPath: res.tempFilePaths[0],
+                isShow: true
               });
 
+              // 将图片编码为base64字符串
               wx.getFileSystemManager().readFile({
                 filePath: this.data.tempImgPath,
                 encoding: 'base64',

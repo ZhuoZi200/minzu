@@ -1,0 +1,14 @@
+/* components/toast/toast.wxss */
+.toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 60%;
+  background-color: rgba(0, 0, 0, .5);
+  font-size: 50rpx;
+  border-radius: 45rpx;
+  color: #fff;
+  padding: 20rpx;
+}

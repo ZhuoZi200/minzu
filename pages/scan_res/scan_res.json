@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "toast": "/components/toast/toast"
+  },
+  "navigationBarTitleText": "识别结果"
 }

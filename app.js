@@ -39,7 +39,7 @@ App({
         console.log("获取到的code为：")
         console.log(res)
         wx.request({
-          url: 'http://127.0.0.1/get_openid.php',
+          url: 'http://106.52.192.123/get_openid.php',
           data: {
             code: res.code
           },
@@ -75,7 +75,7 @@ App({
   // 向百度请求access_token，并将请求结果做缓存
   getAccessToken() {
     wx.request({
-      url: 'http://127.0.0.1/get_accesstoken.php',
+      url: 'http://106.52.192.123/get_accesstoken.php',
       method: 'POST',
       header: {
         'content-type': 'application/x-www-form-urlencoded'
